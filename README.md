@@ -77,7 +77,7 @@ Once the services are active, you can access them via:
     *   **Start Command**: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
 5.  Under **Advanced**, click **Add Environment Variable** and enter:
     *   `DATABASE_URL`: *(Your Supabase connection string copied above)*
-6.  Deploy the service and copy the provided web service URL (e.g., `https://your-backend.onrender.com`).
+6.  Deploy the service and copy the provided web service URL (https://inventory-management-cegq.onrender.com).
 
 ### Frontend (Vercel)
 1.  Sign in to [vercel.com](https://vercel.com) and click **Add New** → **Project**.
@@ -85,22 +85,22 @@ Once the services are active, you can access them via:
 3.  Set the **Root Directory** to `frontend`.
 4.  Ensure the **Framework Preset** is set to `Vite`.
 5.  Under **Environment Variables**, add:
-    *   `VITE_API_URL`: `https://your-backend.onrender.com/api` (the URL of your deployed Render backend with the `/api` suffix).
-6.  Click **Deploy** and copy your live frontend URL.
+    *   `VITE_API_URL`: `https://inventory-management-cegq.onrender.com/api` (the URL of your deployed Render backend with the `/api` suffix).
+6.  Click **Deploy** and copy your live frontend URL (https://inventory-management-flame-pi.vercel.app/).
 
 ### Docker Hub (Backend Image)
 To package, test, and host the backend Docker container image on Docker Hub:
 ```bash
 # Build the image from root
-docker build -t yourdockerhubusername/inventory-backend:latest ./backend
+docker build -t devansh0908/kargo-backend:latest ./backend
 
 # Authenticate with Docker Hub
 docker login
 
 # Push the built image
-docker push yourdockerhubusername/inventory-backend:latest
+docker push devansh0908/kargo-backend:latest
 ```
-Docker Hub URL: [https://hub.docker.com/r/yourdockerhubusername/inventory-backend](https://hub.docker.com/r/yourdockerhubusername/inventory-backend)
+Docker Hub URL: [https://hub.docker.com/r/devansh0908/kargo-backend](https://hub.docker.com/r/devansh0908/kargo-backend)
 
 ---
 

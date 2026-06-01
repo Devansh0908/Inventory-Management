@@ -1,26 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import api from '../api/axios.js'
-import { 
-  Package, 
-  ShoppingCart, 
-  Users, 
-  BarChart2, 
-  LayoutDashboard, 
-  Shield, 
-  Check, 
-  ArrowRight, 
-  Menu, 
-  X 
+import {
+  Package,
+  ShoppingCart,
+  Users,
+  BarChart2,
+  LayoutDashboard,
+  Shield,
+  Check,
+  ArrowRight,
+  Menu,
+  X
 } from 'lucide-react'
 
 // Reusable Text Roll Hover Animation Component
 const TextRoll = ({ text }) => {
   return (
     <span className="overflow-hidden inline-block h-[18px] relative">
-      <span 
-        className="flex flex-col transition-transform duration-[450ms] group-hover:-translate-y-1/2" 
-        style={{ 
+      <span
+        className="flex flex-col transition-transform duration-[450ms] group-hover:-translate-y-1/2"
+        style={{
           transitionTimingFunction: 'cubic-bezier(0.25, 0.1, 0.25, 1)'
         }}
       >
@@ -37,9 +37,9 @@ export default function LandingPage() {
 
   const navLinks = [
     { name: 'GitHub Repo', url: 'https://github.com/Devansh0908/Inventory-Management', external: true },
-    { name: 'Frontend Hosted URL', url: '#', external: false },
-    { name: 'Backend API Hosted URL', url: '#', external: false },
-    { name: 'Backend Docker Hub Image', url: '#', external: false }
+    { name: 'Frontend Hosted URL', url: 'https://inventory-management-flame-pi.vercel.app/', external: true },
+    { name: 'Backend API Hosted URL', url: 'https://inventory-management-cegq.onrender.com', external: true },
+    { name: 'Backend Docker Hub Image', url: 'https://hub.docker.com/r/devansh0908/kargo-backend', external: true }
   ]
 
   const [liveStats, setLiveStats] = useState({
@@ -99,7 +99,7 @@ export default function LandingPage() {
           SECTION 1: HERO
           ──────────────────────────────────────────────────────── */}
       <section className="min-h-screen flex flex-col justify-between bg-[#FAF8F5]">
-        
+
         {/* Navigation */}
         <nav className="sticky top-0 z-50 bg-[#FAF8F5]/90 backdrop-blur-sm border-b border-[rgba(28,25,23,0.08)]">
           <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 py-4 sm:py-5 flex items-center justify-between">
@@ -111,12 +111,12 @@ export default function LandingPage() {
               <span className="font-sans font-medium text-[15px] tracking-tight text-[#1C1917]">
                 Kargo
               </span>
-              
+
               {/* Nav links */}
               <div className="hidden md:flex items-center gap-5 lg:gap-6 ml-6 lg:ml-8">
                 {navLinks.map((link) => (
-                  <a 
-                    key={link.name} 
+                  <a
+                    key={link.name}
                     href={link.url}
                     target={link.external ? "_blank" : undefined}
                     rel={link.external ? "noopener noreferrer" : undefined}
@@ -137,7 +137,7 @@ export default function LandingPage() {
               </div>
 
               {/* Filled CTA */}
-              <button 
+              <button
                 onClick={() => navigate('/dashboard')}
                 className="group bg-[#1C1917] text-white rounded-full px-5 py-1.5 text-[13px] font-medium font-sans hover:bg-[#2C2925] transition-colors duration-200 flex items-center justify-center"
               >
@@ -146,7 +146,7 @@ export default function LandingPage() {
             </div>
 
             {/* Mobile Hamburger */}
-            <button 
+            <button
               onClick={() => setMobileMenuOpen(true)}
               className="md:hidden bg-[#1C1917] text-white rounded-full w-9 h-9 flex items-center justify-center hover:bg-[#2C2925] transition-colors"
               aria-label="Open mobile menu"
@@ -161,7 +161,7 @@ export default function LandingPage() {
           <div className="fixed inset-0 z-50 flex items-end justify-center bg-[#1C1917]/30 backdrop-blur-xs">
             <div className="absolute inset-0" onClick={() => setMobileMenuOpen(false)} />
             <div className="relative bg-white w-full mx-3 mb-3 rounded-2xl p-6 shadow-2xl flex flex-col gap-6 animate-slide-up max-w-md">
-              
+
               {/* Header */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
@@ -170,7 +170,7 @@ export default function LandingPage() {
                   </div>
                   <span className="font-sans font-medium text-[15px]">Kargo</span>
                 </div>
-                <button 
+                <button
                   onClick={() => setMobileMenuOpen(false)}
                   className="bg-[#FAF8F5] text-[#1C1917] rounded-full w-8 h-8 flex items-center justify-center border border-[#1C1917]/10"
                 >
@@ -220,7 +220,7 @@ export default function LandingPage() {
             </div>
 
             {/* Headline H1 */}
-            <h1 
+            <h1
               className="text-[#1C1917] leading-[1.05] tracking-[-0.02em] mb-6 sm:mb-8 font-serif"
               style={{ fontSize: 'clamp(2.4rem, 6vw, 5rem)' }}
             >
@@ -237,7 +237,7 @@ export default function LandingPage() {
 
             {/* CTA row */}
             <div className="flex flex-col sm:flex-row items-start gap-4">
-              <button 
+              <button
                 onClick={() => navigate('/dashboard')}
                 className="group bg-[#1C1917] text-white rounded-full pl-5 pr-2 py-2 inline-flex items-center gap-4 hover:bg-[#2C2925] transition-colors duration-200"
               >
@@ -254,12 +254,12 @@ export default function LandingPage() {
 
         {/* Hero Visual - Dashboard Preview */}
         <div className="max-w-[1440px] mx-auto w-full px-6 sm:px-10 lg:px-16 pb-12 reveal" style={{ transitionDelay: '80ms' }}>
-          <div 
+          <div
             className="relative w-full bg-[#F2EDE6] rounded-2xl sm:rounded-3xl overflow-hidden aspect-[16/10] max-h-[580px] shadow-[0_24px_80px_rgba(28,25,23,0.12)] border border-[rgba(28,25,23,0.08)]"
           >
             {/* Mock Dashboard Layout */}
             <div className="w-full h-full flex transform scale-[0.98] origin-center transition-all duration-500">
-              
+
               {/* Sidebar */}
               <aside className="w-44 bg-[#1C1917] h-full flex flex-col justify-between p-4 hidden md:flex">
                 <div>
@@ -267,7 +267,7 @@ export default function LandingPage() {
                     <div className="w-6 h-6 bg-white text-[#1C1917] rounded-[4px] flex items-center justify-center font-serif italic text-[10px]">K/</div>
                     <span className="text-white text-[12px] font-sans font-medium tracking-tight">Kargo</span>
                   </div>
-                  
+
                   <nav className="flex flex-col gap-1 mt-4">
                     {[
                       { name: 'Dashboard', icon: LayoutDashboard, active: false },
@@ -278,11 +278,10 @@ export default function LandingPage() {
                     ].map((item) => {
                       const Icon = item.icon
                       return (
-                        <div 
+                        <div
                           key={item.name}
-                          className={`flex items-center gap-2 px-2.5 py-1.5 rounded-md text-[11px] font-sans transition-all duration-200 cursor-pointer ${
-                            item.active ? 'bg-white/10 text-white' : 'text-white/40 hover:text-white/70'
-                          }`}
+                          className={`flex items-center gap-2 px-2.5 py-1.5 rounded-md text-[11px] font-sans transition-all duration-200 cursor-pointer ${item.active ? 'bg-white/10 text-white' : 'text-white/40 hover:text-white/70'
+                            }`}
                         >
                           <Icon size={12} />
                           <span>{item.name}</span>
@@ -296,11 +295,11 @@ export default function LandingPage() {
 
               {/* Main Content Pane */}
               <main className="flex-1 bg-[#FAF8F5] p-4 sm:p-5 flex flex-col overflow-hidden">
-                
+
                 {/* Dashboard Header */}
                 <div className="flex justify-between items-center mb-4 sm:mb-5">
                   <h3 className="text-sm font-sans font-bold text-[#1C1917] tracking-tight">Inventory Overview</h3>
-                  <button 
+                  <button
                     onClick={() => navigate('/dashboard')}
                     className="bg-[#1C1917] text-white text-[10px] font-sans font-medium rounded-full px-3 py-1 hover:bg-[#2C2925]"
                   >
@@ -308,7 +307,7 @@ export default function LandingPage() {
                   </button>
                 </div>
 
-                 {/* Stats cards grid */}
+                {/* Stats cards grid */}
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 mb-4 sm:mb-5">
                   {[
                     { title: 'Total Products', val: liveStats.total_products.toLocaleString(), trend: 'Live', trendColor: 'text-green-600 bg-green-50' },
@@ -347,10 +346,10 @@ export default function LandingPage() {
                     ]).map((row, i) => {
                       const qty = row.quantity
                       const status = qty === 0 ? 'Out of Stock' : qty <= 5 ? 'Low Stock' : 'In Stock'
-                      const statusColor = qty === 0 
-                        ? 'bg-red-50 text-red-700' 
-                        : qty <= 5 
-                          ? 'bg-amber-50 text-amber-700' 
+                      const statusColor = qty === 0
+                        ? 'bg-red-50 text-red-700'
+                        : qty <= 5
+                          ? 'bg-amber-50 text-amber-700'
                           : 'bg-green-50 text-green-700'
 
                       return (
@@ -380,11 +379,11 @@ export default function LandingPage() {
           ──────────────────────────────────────────────────────── */}
       <section id="features" className="bg-[#F2EDE6] py-20 sm:py-28 lg:py-36">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
-          
+
           {/* Header Row */}
           <div className="reveal mb-12 sm:mb-16">
 
-            
+
             <h2 className="text-[#1C1917] tracking-[-0.02em] font-serif leading-[1.1]" style={{ fontSize: 'clamp(1.6rem, 4vw, 3.4rem)' }}>
               Built for the way real
               <br className="hidden sm:block" />
@@ -395,7 +394,7 @@ export default function LandingPage() {
 
           {/* Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            
+
             {/* Card 1 */}
             <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[rgba(28,25,23,0.08)] hover:border-[rgba(28,25,23,0.14)] transition-all duration-300 hover:shadow-[0_8px_32px_rgba(28,25,23,0.07)] group reveal">
               <div className="w-10 h-10 rounded-xl bg-[#F0E4D0] flex items-center justify-center mb-5 text-[#C17A3A]">
@@ -457,8 +456,8 @@ export default function LandingPage() {
                 { name: 'Render', color: 'bg-purple-400' },
                 { name: 'Vercel', color: 'bg-black' }
               ].map((tech) => (
-                <div 
-                  key={tech.name} 
+                <div
+                  key={tech.name}
                   className="flex items-center gap-2 border border-[rgba(28,25,23,0.14)] rounded-full px-4 py-2 text-[12px] font-sans font-semibold text-[#1C1917]"
                 >
                   <span className={`w-2 h-2 rounded-full ${tech.color}`}></span>
@@ -476,11 +475,11 @@ export default function LandingPage() {
           ──────────────────────────────────────────────────────── */}
       <section id="api" className="bg-[#FAF8F5] py-20 sm:py-28 lg:py-36">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
-          
+
           {/* Header */}
           <div className="reveal mb-12 sm:mb-16">
 
-            
+
             <h2 className="text-[#1C1917] tracking-[-0.02em] font-serif leading-[1.1]" style={{ fontSize: 'clamp(1.6rem, 4vw, 3.4rem)' }}>
               Every endpoint,
               <br className="hidden sm:block" />
@@ -491,10 +490,10 @@ export default function LandingPage() {
 
           {/* Content Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-[55%_1fr] gap-10 lg:gap-16">
-            
+
             {/* Left API Reference Cards */}
             <div className="flex flex-col gap-4 reveal">
-              
+
               {/* Group 1: Products */}
               <div className="bg-white border border-[rgba(28,25,23,0.08)] rounded-2xl overflow-hidden shadow-xs">
                 <div className="bg-[#F2EDE6] px-5 py-3 flex items-center gap-2.5">
@@ -598,14 +597,14 @@ export default function LandingPage() {
               </div>
 
               {/* Action Bottom */}
-              <div 
+              <div
                 onClick={() => navigate('/dashboard')}
                 className="group mt-10 pt-6 border-t border-white/10 flex items-center justify-between cursor-pointer"
               >
                 <span className="text-white font-sans text-[13px] font-semibold">
                   <TextRoll text="Explore the API docs" />
                 </span>
-                
+
                 <span className="w-7 h-7 rounded-full bg-white flex items-center justify-center text-[#1C1917] group-hover:-rotate-45 transition-transform duration-300">
                   <ArrowRight size={12} />
                 </span>
@@ -623,7 +622,7 @@ export default function LandingPage() {
           ──────────────────────────────────────────────────────── */}
       <footer className="bg-[#1C1917] py-12 border-t border-white/5">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
-          
+
           {/* Left Brand */}
           <div>
             <div className="flex items-center gap-2 text-white">
@@ -640,8 +639,8 @@ export default function LandingPage() {
           {/* Links */}
           <div className="hidden sm:flex items-center gap-6 text-[12px] font-sans text-white/50">
             {navLinks.map((link) => (
-              <a 
-                key={link.name} 
+              <a
+                key={link.name}
                 href={link.url}
                 target={link.external ? "_blank" : undefined}
                 rel={link.external ? "noopener noreferrer" : undefined}
