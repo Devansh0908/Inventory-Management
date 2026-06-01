@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream:       #FAF8F5;
+  --nude-1:      #F2EDE6;
+  --nude-2:      #E8E0D5;
+  --nude-3:      #C9BFB2;
+  --warm-black:  #1C1917;
+  --warm-gray:   #78716C;
+  --warm-mid:    #A8998A;
+  --accent:      #C17A3A;          /* warm amber-bronze */
+  --accent-soft: #F0E4D0;          /* accent tint */
+  --accent-deep: #9A5E22;
+  --white:       #FFFFFF;
+  --border:      rgba(28,25,23,0.08);
+  --border-md:   rgba(28,25,23,0.14);
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--cream);
+  color: var(--warm-black);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+}
+
+/* Scroll Animation Classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  will-change: transform, opacity;
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1), transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom Scrollbar for Sleek Design */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--nude-3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--warm-mid);
+}
+
+/* Text Roll Hover Support */
+.text-roll-wrapper {
+  height: 18px;
+  overflow: hidden;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.text-roll-item {
+  transition: transform 450ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}

@@ -1,0 +1,34 @@
+# Python dependencies and artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+ENV/
+env/
+backend/.env
+backend/app.db
+
+# Node dependencies and build artifacts
+node_modules/
+frontend/dist/
+frontend/.env
+.eslintcache
+
+# Docker
+.docker-sync.log
+
+# Databases
+postgres_data/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS files
+.DS_Store
+Thumbs.db
