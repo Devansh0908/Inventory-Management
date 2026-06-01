@@ -21,6 +21,7 @@ https://inventory-management-cegq.onrender.com/docs
 ### Backend Docker Hub Image Link
 
 https://hub.docker.com/r/devansh0908/kargo-backend
+
 ---
 
 ## Project Overview
